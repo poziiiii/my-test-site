@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Тестовый сайт для Google Analytics</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K78ZGX56');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            background: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K78ZGX56"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <h1>Добро пожаловать на тестовый сайт!</h1>
+    <p>Этот простой сайт создан для практики с Google Analytics и Google Tag Manager.</p>
+    <p>Ты можешь отслеживать клики по кнопке, время на странице и другие события.</p>
+
+    <button id="actionBtn">Нажми меня</button>
+
+    <script>
+        // Пример: отправка события при клике на кнопку
+        document.getElementById('actionBtn').addEventListener('click', function() {
+            console.log('Кнопка нажата');
+
+            // Здесь можно добавить код отправки события в Google Analytics или GTM
+            // Например, для GA4 через gtag:
+            /*
+            gtag('event', 'button_click', {
+              'event_category': 'engagement',
+              'event_label': 'actionBtn'
+            });
+            */
+        });
+    </script>
+</body>
+</html>
+
