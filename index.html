@@ -90,34 +90,41 @@
   </div>
 
   <script>
-    // Handle navigation
+    // Handle navigation between pages
     function showPage(page) {
       document.getElementById('home').classList.add('hidden');
       document.getElementById('about').classList.add('hidden');
       document.getElementById(page).classList.remove('hidden');
 
-      // Track virtual pageview
+      // Send virtual page_view to GA
       gtag('event', 'page_view', {
         page_title: page === 'home' ? 'Home' : 'About',
         page_path: '/' + page
       });
+      console.log(`Virtual page_view sent: /${page}`);
     }
 
-    // Track button click events
+    // Button click events
     document.getElementById('homeButton').addEventListener('click', function() {
       console.log('Home button clicked');
-      gtag('event', 'click', {
+
+      gtag('event', 'home_button_click', {
         event_category: 'button',
         event_label: 'home_button'
       });
+
+      console.log('GA event sent: home_button_click');
     });
 
     document.getElementById('aboutButton').addEventListener('click', function() {
       console.log('About button clicked');
-      gtag('event', 'click', {
+
+      gtag('event', 'about_button_click', {
         event_category: 'button',
         event_label: 'about_button'
       });
+
+      console.log('GA event sent: about_button_click');
     });
   </script>
 </body>
